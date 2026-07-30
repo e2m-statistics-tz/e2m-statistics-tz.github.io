@@ -2,7 +2,7 @@
    Tone: Authoritative, precise, trustworthy, modern-academic
    Palette: Deep navy (#0b3d5c) primary, gold (#f0b429) accent
    Typography: Instrument Serif (display) + Work Sans (body)
-   Updated workflow with exact background filenames picture_1.png to picture_7.png
+   Updated workflow with direct enquiry delivery to business email
 */
 
 @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Work+Sans:wght@300..700&display=swap');
@@ -61,6 +61,7 @@
   --color-accent: #f0b429;
   --color-accent-hover: #d99b10;
   --color-teal: #145374;
+  --color-success: #1f7a46;
 
   --shadow-sm: 0 2px 8px rgba(11, 61, 92, 0.08);
   --shadow-md: 0 10px 30px rgba(11, 61, 92, 0.12);
@@ -84,6 +85,7 @@
   --color-accent: #f0b429;
   --color-accent-hover: #ffc64a;
   --color-teal: #56b3da;
+  --color-success: #6fd38f;
 }
 
 *,
@@ -886,6 +888,11 @@ button,
   font-size: var(--text-sm);
   font-weight: 600;
   color: var(--color-teal);
+  min-height: 1.5em;
+}
+
+#form-feedback.is-success {
+  color: var(--color-success);
 }
 
 .form-honeypot {
