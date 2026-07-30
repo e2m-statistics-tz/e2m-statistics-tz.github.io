@@ -107,7 +107,7 @@
 
       <div class="credential-badges">
         <span class="badge">Professional Statistical Consultancy</span>
-        <span class="badge">PhD-Level Expertise</span>
+        <span class="badge">Highly Qualified-Level Expertise</span>
         <span class="badge">Reproducible Analytics</span>
         <span class="badge">Policy-Ready Reporting</span>
         <span class="badge">Academic &amp; Institutional Support</span>
@@ -244,7 +244,7 @@
           </div>
 
           <div class="team-info">
-            <span class="team-badge team-badge--lead">Lead Consultant &amp; CEO</span>
+            <span class="team-badge team-badge--lead">Lead Consultant &amp; Founder</span>
             <h3>Edwin Musheiguza</h3>
             <p class="team-title-line">Statistician · Biostatistician · Assistant Lecturer</p>
             <p class="team-field">Biostatistics · Epidemiology · Applied Econometrics · Bayesian Methods · Spatial Analysis · Research Methodology · Mixed-Effects Models</p>
@@ -441,7 +441,13 @@
           </dl>
         </div>
 
-        <form class="contact-form reveal" id="contact-form">
+        <form class="contact-form reveal" id="contact-form" action="https://formsubmit.co/ajax/e2mstatistics.researchservices@gmail.com" method="POST" accept-charset="UTF-8">
+          <input type="hidden" name="_subject" value="New Enquiry from E2M Statistics Website" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_autoresponse" value="Thank you for contacting E2M Statistics &amp; Research Services. Your enquiry has been received and a response will be shared as soon as possible." />
+          <input type="text" name="_honey" class="form-honeypot" tabindex="-1" autocomplete="off" />
+
           <div class="form-group">
             <label for="name">Full name</label>
             <input type="text" id="name" name="name" placeholder="Your name" required />
@@ -450,6 +456,16 @@
           <div class="form-group">
             <label for="email">Email address</label>
             <input type="email" id="email" name="email" placeholder="your@email.com" required />
+          </div>
+
+          <div class="form-group">
+            <label for="organisation">Organisation / Institution</label>
+            <input type="text" id="organisation" name="organisation" placeholder="University, company, NGO..." />
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone / WhatsApp</label>
+            <input type="text" id="phone" name="phone" placeholder="Optional phone number" />
           </div>
 
           <div class="form-group">
@@ -462,6 +478,7 @@
               <option>Business Intelligence &amp; Evaluation</option>
               <option>Training &amp; Capacity Building</option>
               <option>Digital Health &amp; Applied Health Analytics</option>
+              <option>Other / Not Listed</option>
             </select>
           </div>
 
@@ -581,10 +598,28 @@ document.getElementById('footer-year').textContent = new Date().getFullYear();
 const contactForm = document.getElementById('contact-form');
 const feedback = document.getElementById('form-feedback');
 
-contactForm?.addEventListener('submit', event => {
+contactForm?.addEventListener('submit', async event => {
   event.preventDefault();
-  feedback.textContent = 'Thank you. Your enquiry has been received. We will respond shortly.';
-  contactForm.reset();
+  feedback.textContent = 'Sending your enquiry...';
+
+  const formData = new FormData(contactForm);
+
+  try {
+    const response = await fetch(contactForm.action, {
+      method: 'POST',
+      body: formData,
+      headers: { Accept: 'application/json' }
+    });
+
+    if (response.ok) {
+      feedback.textContent = 'Your enquiry has been sent successfully. Please also check your email for confirmation.';
+      contactForm.reset();
+    } else {
+      feedback.textContent = 'Delivery failed from the website form. Please email us directly at e2mstatistics.researchservices@gmail.com.';
+    }
+  } catch (error) {
+    feedback.textContent = 'Delivery failed from the website form. Please email us directly at e2mstatistics.researchservices@gmail.com.';
+  }
 });
 </script>
 
