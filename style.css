@@ -2,7 +2,7 @@
    Tone: Authoritative, precise, trustworthy, modern-academic
    Palette: Deep navy (#0b3d5c) primary, gold (#f0b429) accent
    Typography: Instrument Serif (display) + Work Sans (body)
-   Updated workflow with 7 background pictures incorporated
+   Updated workflow with exact background filenames picture_1.png to picture_7.png
 */
 
 @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Work+Sans:wght@300..700&display=swap');
@@ -107,8 +107,12 @@ body {
   font-size: var(--text-base);
   line-height: 1.82;
   color: var(--color-text);
-  background: var(--color-bg);
+  background: linear-gradient(rgba(238, 243, 248, 0.88), rgba(238, 243, 248, 0.88)), url("picture_1.png") center/cover fixed no-repeat;
   min-height: 100dvh;
+}
+
+[data-theme="dark"] body {
+  background: linear-gradient(rgba(15, 25, 35, 0.88), rgba(15, 25, 35, 0.88)), url("picture_1.png") center/cover fixed no-repeat;
 }
 
 img,
@@ -193,7 +197,6 @@ button,
   max-width: 1280px;
 }
 
-/* Header */
 .site-header {
   position: sticky;
   top: 0;
@@ -284,13 +287,12 @@ button,
   justify-content: center;
 }
 
-/* Hero */
 .hero {
   position: relative;
   color: var(--color-text-inverse);
   padding-block: clamp(var(--space-16), 10vw, var(--space-24));
   text-align: center;
-  background: linear-gradient(rgba(11, 61, 92, 0.78), rgba(20, 83, 116, 0.72)), url("picture1.png") center/cover no-repeat;
+  background: linear-gradient(rgba(11, 61, 92, 0.78), rgba(20, 83, 116, 0.72)), url("picture_1.png") center/cover no-repeat;
 }
 
 .hero-inner {
@@ -416,7 +418,6 @@ button,
   letter-spacing: 0.08em;
 }
 
-/* Sections */
 .section {
   padding-block: clamp(var(--space-12), 7vw, var(--space-24));
 }
@@ -499,7 +500,6 @@ button,
   color: var(--color-teal);
 }
 
-/* Grids */
 .services-grid,
 .modelling-grid,
 .why-grid,
@@ -653,7 +653,6 @@ button,
   margin-bottom: var(--space-2);
 }
 
-/* Team */
 .team-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -758,7 +757,6 @@ button,
   font-weight: 900;
 }
 
-/* Dark section */
 .section--dark {
   background: linear-gradient(135deg, #0b3d5c, #08283b);
   color: #fff;
@@ -784,7 +782,6 @@ button,
   line-height: 1.8;
 }
 
-/* Contact */
 .contact-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -900,7 +897,6 @@ button,
   pointer-events: none;
 }
 
-/* Footer */
 .site-footer {
   background: #071e2e;
   color: rgba(255, 255, 255, 0.72);
@@ -967,7 +963,6 @@ button,
   color: rgba(255, 255, 255, 0.55);
 }
 
-/* Reveal */
 .reveal {
   opacity: 0;
   transform: translateY(22px);
@@ -1018,31 +1013,31 @@ button,
 }
 
 .section-bg-1::before {
-  background-image: url("picture1.png");
+  background-image: url("picture_1.png");
 }
 
 .section-bg-2::before {
-  background-image: url("picture2.png");
+  background-image: url("picture_2.png");
 }
 
 .section-bg-3::before {
-  background-image: url("picture3.png");
+  background-image: url("picture_3.png");
 }
 
 .section-bg-4::before {
-  background-image: url("picture4.png");
+  background-image: url("picture_4.png");
 }
 
 .section-bg-5::before {
-  background-image: url("picture5.png");
+  background-image: url("picture_5.png");
 }
 
 .section-bg-6::before {
-  background-image: url("picture6.png");
+  background-image: url("picture_6.png");
 }
 
 .section-bg-7::before {
-  background-image: url("picture7.png");
+  background-image: url("picture_7.png");
 }
 
 .section-panel,
@@ -1056,7 +1051,6 @@ button,
   backdrop-filter: blur(12px);
 }
 
-/* Software section */
 .software-section {
   padding-top: clamp(var(--space-12), 7vw, var(--space-20));
   padding-bottom: clamp(var(--space-12), 7vw, var(--space-20));
@@ -1145,7 +1139,6 @@ button,
   color: #ffffff;
 }
 
-/* Mobile and layout fixes */
 @media (max-width: 1180px) {
   .service-card {
     grid-template-columns: 1fr;
